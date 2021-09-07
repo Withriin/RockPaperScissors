@@ -9,5 +9,6 @@ namespace rock_papper_scissors
     {
 
         public string Name { get; set; }
+        public int WeaponNumber {get; set; }
     }
 }

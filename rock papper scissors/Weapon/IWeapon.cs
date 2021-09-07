@@ -7,5 +7,6 @@ namespace rock_papper_scissors.Weapon
     public interface IWeapon
     {
         public string Name { get; set; }
+        public int WeaponNumber { get; set;}
     }
 }
