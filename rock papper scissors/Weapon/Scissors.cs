@@ -14,6 +14,7 @@ namespace rock_papper_scissors
         {
             return oponentWeapon.GetType() == typeof(Paper);
         }
+
         public bool isDraw(IWeapon opponentWeapon)
         {
             return opponentWeapon.GetType() == this.GetType();

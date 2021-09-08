@@ -23,7 +23,7 @@ namespace rock_papper_scissors
                 IWeapon computerWeapon = weaponDictionary.GetValueOrDefault(debugComputerChoice.ToString(),null);
                 IWeapon playerWeapon = weaponDictionary.GetValueOrDefault(userWeapon, null);
                                 
-                string combatResult = rpsOptions.GetCombatResult(playerWeapon, computerWeapon );
+                string combatResult = rpsOptions.GetCombatResult(playerWeapon, computerWeapon);
                                 
                 Console.WriteLine($"The player selected {playerWeapon.Name}");
                 Console.WriteLine($"The computer selected {computerWeapon.Name}");

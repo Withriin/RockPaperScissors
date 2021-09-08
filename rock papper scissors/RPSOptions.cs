@@ -10,7 +10,7 @@ namespace rock_papper_scissors
     {
         public Dictionary<string, IWeapon> GetWeaponDictionary()
         {
-            return   new Dictionary<string, IWeapon>()
+            return new Dictionary<string, IWeapon>()
                 {
                     { "1", new Rock { Name = "Rock"} },
                     { "2", new Paper { Name = "Paper"} },
@@ -18,7 +18,7 @@ namespace rock_papper_scissors
                 };
         }
 
-        public string GetCombatResult(IWeapon userWeapon,  IWeapon computerWeapon)
+        public string GetCombatResult(IWeapon userWeapon, IWeapon computerWeapon)
         {
             if (userWeapon.isDraw(computerWeapon))
             {
