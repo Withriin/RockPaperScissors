@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPSConsoleApp
+namespace RockPaperScissorsApplication
 {
     public class BigBrain
     {
@@ -13,7 +13,7 @@ namespace RPSConsoleApp
             while (true)
             {
                 //Ask player to select an attack option based off of weapon options
-                RPSOptions rpsOptions = new();
+                RockPaperScissorsOptions rpsOptions = new RockPaperScissorsOptions();
                 Dictionary<string, IWeapon> weaponDictionary = rpsOptions.GetWeaponDictionary();
                 Console.WriteLine($"Please select an option {Environment.NewLine}{rpsOptions.WeaponOptions()}");
                 string userWeapon = rpsOptions.ReadUserWeaponSelector();
@@ -21,8 +21,8 @@ namespace RPSConsoleApp
                 //comuters weapon choice generator
                 Random computerChoice = new Random();
                 int debugComputerChoice = computerChoice.Next(1, weaponDictionary.Count + 1);
-                IWeapon computerWeapon = weaponDictionary.GetValueOrDefault(debugComputerChoice.ToString(), null);
-                IWeapon playerWeapon = weaponDictionary.GetValueOrDefault(userWeapon, null);
+                weaponDictionary.TryGetValue(debugComputerChoice.ToString(), out IWeapon computerWeapon);
+                weaponDictionary.TryGetValue(userWeapon, out IWeapon playerWeapon);
 
                 string combatResult = rpsOptions.GetCombatResult(playerWeapon, computerWeapon);
 

@@ -3,14 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSLibrary", "rock papper scissors\RPSLibrary.csproj", "{014626E6-9151-4ED2-BAA8-4351E7700C4E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{09354C3B-F820-4596-BE70-026CFE654BAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSConsoleApp", "RPSConsoleApp\RPSConsoleApp.csproj", "{B165949D-B7AD-478B-8096-3C924B544D90}"
-	ProjectSection(ProjectDependencies) = postProject
-		{014626E6-9151-4ED2-BAA8-4351E7700C4E} = {014626E6-9151-4ED2-BAA8-4351E7700C4E}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSUnitTestProject", "RPSUnitTestProject\RPSUnitTestProject.csproj", "{5ADAD84F-D7D4-4B79-A4BB-2E7AEA5E1DF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissorsLibrary", "RockPaperScissorsLibrary\RockPaperScissorsLibrary.csproj", "{F66719DD-0C54-4447-AE7B-E03A21D9EFD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissorsApplication", "RockPaperScissorsApplication\RockPaperScissorsApplication.csproj", "{D280AD08-540C-405E-BD4B-4C90DD687AC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,14 +17,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{014626E6-9151-4ED2-BAA8-4351E7700C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{014626E6-9151-4ED2-BAA8-4351E7700C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{014626E6-9151-4ED2-BAA8-4351E7700C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{014626E6-9151-4ED2-BAA8-4351E7700C4E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B165949D-B7AD-478B-8096-3C924B544D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B165949D-B7AD-478B-8096-3C924B544D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B165949D-B7AD-478B-8096-3C924B544D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B165949D-B7AD-478B-8096-3C924B544D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ADAD84F-D7D4-4B79-A4BB-2E7AEA5E1DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ADAD84F-D7D4-4B79-A4BB-2E7AEA5E1DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ADAD84F-D7D4-4B79-A4BB-2E7AEA5E1DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ADAD84F-D7D4-4B79-A4BB-2E7AEA5E1DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66719DD-0C54-4447-AE7B-E03A21D9EFD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66719DD-0C54-4447-AE7B-E03A21D9EFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66719DD-0C54-4447-AE7B-E03A21D9EFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66719DD-0C54-4447-AE7B-E03A21D9EFD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D280AD08-540C-405E-BD4B-4C90DD687AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D280AD08-540C-405E-BD4B-4C90DD687AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D280AD08-540C-405E-BD4B-4C90DD687AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D280AD08-540C-405E-BD4B-4C90DD687AC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

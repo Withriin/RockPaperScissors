@@ -6,7 +6,7 @@ using System.Text;
 namespace RockPaperScissorsLibrary
 {
     // attack options probably going to delete soon in favor of a better design *really dislike this as I'm moving forward: updated, work in progress
-    public class RPSOptions
+    public class RockPaperScissorsOptions
     {
         public Dictionary<string, IWeapon> GetWeaponDictionary()
         {

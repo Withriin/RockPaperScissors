@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using rock_papper_scissors;
 
 namespace RPSUnitTestProject
 {

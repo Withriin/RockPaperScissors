@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{322BE619-0B6F-4D2E-9A4A-EF8940534DD2}</ProjectGuid>
+    <ProjectGuid>{5ADAD84F-D7D4-4B79-A4BB-2E7AEA5E1DF2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RPSUnitTestProject</RootNamespace>
@@ -56,8 +56,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\rock papper scissors\RockPaperScissorsLibrary.csproj">
-      <Project>{014626e6-9151-4ed2-baa8-4351e7700c4e}</Project>
+    <ProjectReference Include="..\RockPaperScissorsLibrary\RockPaperScissorsLibrary.csproj">
+      <Project>{f66719dd-0c54-4447-ae7b-e03a21d9efd7}</Project>
       <Name>RockPaperScissorsLibrary</Name>
     </ProjectReference>
   </ItemGroup>
