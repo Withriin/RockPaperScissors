@@ -15,8 +15,8 @@ namespace RockPaperScissorsApplication
                 //Ask player to select an attack option based off of weapon options
                 RockPaperScissorsOptions rpsOptions = new RockPaperScissorsOptions();
                 Dictionary<string, IWeapon> weaponDictionary = rpsOptions.GetWeaponDictionary();
-                Console.WriteLine($"Please select an option {Environment.NewLine}{rpsOptions.WeaponOptions()}");
-                string userWeapon = rpsOptions.ReadUserWeaponSelector();
+                Console.WriteLine($"Please select an option {Environment.NewLine}{rpsOptions.GetWeaponOptions()}");
+                string userWeapon = Console.ReadLine();
 
                 //comuters weapon choice generator
                 Random computerChoice = new Random();

@@ -34,13 +34,7 @@ namespace RockPaperScissorsLibrary
             }
         }
          
-        public string ReadUserWeaponSelector()
-        {
-            string userWeaponChoice = Console.ReadLine();
-            return userWeaponChoice;
-        }
-
-        public string WeaponOptions()
+        public string GetWeaponOptions()
         {
             StringBuilder weaponOptionString = new StringBuilder();
             foreach (KeyValuePair<string, IWeapon> entry in GetWeaponDictionary())
@@ -51,7 +45,8 @@ namespace RockPaperScissorsLibrary
             return weaponOptionString.ToString();
             
         }
+        // TO-DO Make Feature win count branch (git)
+        // TO-DO Make input validation branch (git)
 
-       
-    }    
+    }
 }
