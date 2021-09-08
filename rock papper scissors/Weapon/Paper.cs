@@ -9,6 +9,14 @@ namespace rock_papper_scissors
     {
 
         public string Name { get; set; }
-        public int WeaponNumber {get; set; }
+       
+        public bool isWinner(IWeapon oponentWeapon)
+        {
+            return oponentWeapon.GetType() == typeof(Rock);
+        }
+        public bool isDraw(IWeapon opponentWeapon)
+        {
+            return opponentWeapon.GetType() == this.GetType();
+        }
     }
 }

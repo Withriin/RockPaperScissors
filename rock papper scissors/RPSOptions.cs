@@ -12,54 +12,29 @@ namespace rock_papper_scissors
         {
             return   new Dictionary<string, IWeapon>()
                 {
-                    { "1", new Rock { Name = "Rock" , WeaponNumber = 1} },
-                    { "2", new Paper { Name = "Paper" , WeaponNumber = 2} },
-                    { "3", new Scissors { Name = "Scissors" , WeaponNumber = 3} }
+                    { "1", new Rock { Name = "Rock"} },
+                    { "2", new Paper { Name = "Paper"} },
+                    { "3", new Scissors { Name = "Scissors"} }
                 };
         }
 
-        public string Combat(int userWeapon, int computerWeapon)
+        public string GetCombatResult(IWeapon userWeapon,  IWeapon computerWeapon)
         {
-            if (userWeapon == computerWeapon)
+            if (userWeapon.isDraw(computerWeapon))
             {
-                return "draw";
+                return "Draw";
             }
-            else if (userWeapon == 1)
+            else if (userWeapon.isWinner(computerWeapon))
             {
-                if (computerWeapon == 3)
-                {
-                    return "Victory";
-                }
-                else
-                {
-                    return "Defeat";
-                }
-            }
-            else if (userWeapon == 2)
-            {
-                if (computerWeapon == 1)
-                {
-                    return "Victory";
-                }
-                else
-                {
-                    return "Defeat";
-                }
+                return "Victory";
             }
             else
             {
-                if (computerWeapon == 2)
-                {
-                    return "Victory";
-                }
-                else
-                {
-                    return "Deafeat";
-                }
+                return "Defeat";
             }
         }
          
-        public string UserWeaponSelector()
+        public string ReadUserWeaponSelector()
         {
             string userWeaponChoice = Console.ReadLine();
             return userWeaponChoice;
