@@ -1,9 +1,9 @@
-﻿using rock_papper_scissors.Weapon;
+﻿using RPSLibary.Weapon;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace rock_papper_scissors
+namespace RPSLibary
 {
     // attack options probably going to delete soon in favor of a better design *really dislike this as I'm moving forward: updated, work in progress
     public class RPSOptions

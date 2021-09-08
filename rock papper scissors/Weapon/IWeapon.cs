@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace rock_papper_scissors.Weapon
+namespace RPSLibary.Weapon
 {
     public interface IWeapon
     {

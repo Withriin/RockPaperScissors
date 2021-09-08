@@ -1,9 +1,9 @@
-﻿using rock_papper_scissors.Weapon;
+﻿using RPSLibary.Weapon;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace rock_papper_scissors
+namespace RPSLibary
 {
     public class Paper : IWeapon
     {
