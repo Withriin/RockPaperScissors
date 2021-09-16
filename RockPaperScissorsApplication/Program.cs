@@ -17,3 +17,4 @@ namespace RockPaperScissorsApplication
     }
 }
 
+//TODO make strategy, factory and adapter classes from bigbrain and rpsOptions

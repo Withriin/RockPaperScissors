@@ -55,8 +55,8 @@ namespace RockPaperScissorsLibrary
             return weaponOptionString.ToString();
             
         }
-        // TO-DO Make Feature win count branch (git)
-        // TO-DO Make input validation branch (git)
+        // TODO Make Feature win count branch (git)
+        // TODO Make input validation branch (git)
 
     }
 }

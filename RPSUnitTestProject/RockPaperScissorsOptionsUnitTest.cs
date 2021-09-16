@@ -29,7 +29,6 @@ namespace RPSUnitTestProject
         [TestMethod]
         public void GetCombatResultsTest()
         {
-
             Assert.AreEqual(CombatConclusion.Draw, _rpsOptions.GetCombatResult(new Rock(), new Rock()));
             Assert.AreEqual(CombatConclusion.Victory, _rpsOptions.GetCombatResult(new Rock(), new Scissors()));
             Assert.AreEqual(CombatConclusion.Defeat, _rpsOptions.GetCombatResult(new Rock(), new Paper()));
@@ -37,8 +36,8 @@ namespace RPSUnitTestProject
 
         [TestMethod]
         public void GetWeaponOptionsTest()
-        {            
-            
+        {
+            Assert.AreNotEqual(String.Empty, _rpsOptions.GetWeaponOptions());
         }
     }
 }
