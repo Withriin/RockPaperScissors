@@ -6,7 +6,7 @@ using System.Text;
 namespace RockPaperScissorsLibrary
 {
     // attack options probably going to delete soon in favor of a better design *really dislike this as I'm moving forward: updated, work in progress
-    public class RPSOptions
+    public class RockPaperScissorsOptions
     {
         public Dictionary<string, IWeapon> GetWeaponDictionary()
         {
@@ -18,29 +18,33 @@ namespace RockPaperScissorsLibrary
                 };
         }
 
-        public string GetCombatResult(IWeapon userWeapon, IWeapon computerWeapon)
+        public Dictionary<CombatConclusion, string> GetCombatConclusionMap()
+        {
+            return new Dictionary<CombatConclusion, string>()
+            {
+                {CombatConclusion.Draw, "Draw" },
+                {CombatConclusion.Victory, "Victory" },
+                {CombatConclusion.Defeat, "Defeat" }
+            };
+        }
+
+        public CombatConclusion GetCombatResult(IWeapon userWeapon, IWeapon computerWeapon)
         {
             if (userWeapon.IsDraw(computerWeapon))
             {
-                return "Draw";
+                return CombatConclusion.Draw;
             }
             else if (userWeapon.IsWinner(computerWeapon))
             {
-                return "Victory";
+                return CombatConclusion.Victory;
             }
             else
             {
-                return "Defeat";
+                return CombatConclusion.Defeat;
             }
         }
-         
-        public string ReadUserWeaponSelector()
-        {
-            string userWeaponChoice = Console.ReadLine();
-            return userWeaponChoice;
-        }
 
-        public string WeaponOptions()
+        public string GetWeaponOptions()
         {
             StringBuilder weaponOptionString = new StringBuilder();
             foreach (KeyValuePair<string, IWeapon> entry in GetWeaponDictionary())
@@ -51,7 +55,8 @@ namespace RockPaperScissorsLibrary
             return weaponOptionString.ToString();
             
         }
+        // TODO Make Feature win count branch (git)
+        // TODO Make input validation branch (git)
 
-       
-    }    
+    }
 }

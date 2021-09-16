@@ -1,8 +1,8 @@
 ﻿using System;
-
+using RockPaperScissorsLibrary;
 /* Main view layer of program.  Original concept is to be a simple command line game of rock, paper, scissors.  */
 
-namespace rock_papper_scissors
+namespace RockPaperScissorsConsoleApp
 {
     class Program
     {
