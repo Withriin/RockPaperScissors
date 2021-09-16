@@ -29,7 +29,10 @@ namespace RPSUnitTestProject
         [TestMethod]
         public void GetCombatResultsTest()
         {
-            
+
+            Assert.AreEqual(CombatConclusion.Draw, _rpsOptions.GetCombatResult(new Rock(), new Rock()));
+            Assert.AreEqual(CombatConclusion.Victory, _rpsOptions.GetCombatResult(new Rock(), new Scissors()));
+            Assert.AreEqual(CombatConclusion.Defeat, _rpsOptions.GetCombatResult(new Rock(), new Paper()));
         }
 
         [TestMethod]

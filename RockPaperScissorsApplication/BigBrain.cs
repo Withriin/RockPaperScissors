@@ -24,11 +24,12 @@ namespace RockPaperScissorsApplication
                 weaponDictionary.TryGetValue(debugComputerChoice.ToString(), out IWeapon computerWeapon);
                 weaponDictionary.TryGetValue(userWeapon, out IWeapon playerWeapon);
 
-                string combatResult = rpsOptions.GetCombatResult(playerWeapon, computerWeapon);
+                Dictionary<CombatConclusion, string> combatConclusionDictionary = rpsOptions.GetCombatConclusionMap();
+                CombatConclusion combatResult = rpsOptions.GetCombatResult(playerWeapon, computerWeapon);
 
                 Console.WriteLine($"The player selected {playerWeapon.Name}");
                 Console.WriteLine($"The computer selected {computerWeapon.Name}");
-                Console.WriteLine($"Results: {combatResult}. {Environment.NewLine}");
+                Console.WriteLine($"Results: {combatConclusionDictionary[combatResult]}. {Environment.NewLine}");
 
             }
         }

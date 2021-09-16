@@ -18,22 +18,32 @@ namespace RockPaperScissorsLibrary
                 };
         }
 
-        public string GetCombatResult(IWeapon userWeapon, IWeapon computerWeapon)
+        public Dictionary<CombatConclusion, string> GetCombatConclusionMap()
+        {
+            return new Dictionary<CombatConclusion, string>()
+            {
+                {CombatConclusion.Draw, "Draw" },
+                {CombatConclusion.Victory, "Victory" },
+                {CombatConclusion.Defeat, "Defeat" }
+            };
+        }
+
+        public CombatConclusion GetCombatResult(IWeapon userWeapon, IWeapon computerWeapon)
         {
             if (userWeapon.IsDraw(computerWeapon))
             {
-                return "Draw";
+                return CombatConclusion.Draw;
             }
             else if (userWeapon.IsWinner(computerWeapon))
             {
-                return "Victory";
+                return CombatConclusion.Victory;
             }
             else
             {
-                return "Defeat";
+                return CombatConclusion.Defeat;
             }
         }
-         
+
         public string GetWeaponOptions()
         {
             StringBuilder weaponOptionString = new StringBuilder();
