@@ -55,8 +55,24 @@ namespace RockPaperScissorsLibrary
             return weaponOptionString.ToString();
             
         }
-        // TODO Make Feature win count branch (git)
+
+        private Dictionary<CombatConclusion, int> _battleStatistics = new Dictionary<CombatConclusion, int>
+        {
+            {CombatConclusion.Draw, 0},
+            {CombatConclusion.Victory, 0},
+            {CombatConclusion.Defeat, 0 }
+        };
+        public string GetBattleStatisticsText(CombatConclusion combatConclusion)
+        {
+            _battleStatistics.Add(combatConclusion, ++);
+            return $"{_battleStatistics.Values} Draws, {_victoryCount} Wins, {_defeatCount} Losses.";
+        }
+
+        // Client wants to see  battle data after every match
+        // TODO make counter that tracks wins, loss, draws
+        // TODO method counter, gets enum, for enum.value x++, return x  
         // TODO Make input validation branch (git)
 
     }
 }
+/*  
