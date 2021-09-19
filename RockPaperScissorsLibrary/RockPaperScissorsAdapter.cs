@@ -5,7 +5,6 @@ using System.Text;
 
 namespace RockPaperScissorsLibrary
 {
-    // attack options probably going to delete soon in favor of a better design *really dislike this as I'm moving forward: updated, work in progress
     public class RockPaperScissorsAdapter
     {
         public Dictionary<string, IWeapon> GetWeaponDictionary()
@@ -28,11 +27,6 @@ namespace RockPaperScissorsLibrary
             };
         }
 
-       /* int Wins = 0;
-        int Draws = 0;
-        int Losses = 0;*/
-
-
         public string GetWeaponOptions()
         {
             StringBuilder weaponOptionString = new StringBuilder();
@@ -42,7 +36,6 @@ namespace RockPaperScissorsLibrary
             }
 
             return weaponOptionString.ToString();
-
         }
 
         Dictionary<CombatConclusion , int> _battleStatistics = new Dictionary<CombatConclusion , int>
@@ -51,6 +44,7 @@ namespace RockPaperScissorsLibrary
             {CombatConclusion.Victory , 0},
             {CombatConclusion.Defeat , 0 }
         };
+
         public string GetBattleStatisticsText(CombatConclusion combatConclusion)
         {
             _battleStatistics[combatConclusion] = _battleStatistics[combatConclusion] + 1;

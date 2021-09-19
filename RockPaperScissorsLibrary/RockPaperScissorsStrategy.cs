@@ -13,17 +13,14 @@ namespace RockPaperScissorsLibrary
         {
             if (userWeapon.IsDraw(computerWeapon))
             {
-                //Draws++;
                 return CombatConclusion.Draw;
             }
             else if (userWeapon.IsWinner(computerWeapon))
             {
-                //Wins++;
                 return CombatConclusion.Victory;
             }
             else
             {
-                //Losses++;
                 return CombatConclusion.Defeat;
             }
         }

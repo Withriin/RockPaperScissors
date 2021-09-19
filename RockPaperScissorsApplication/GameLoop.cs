@@ -14,14 +14,15 @@ namespace RockPaperScissorsApplication
             RockPaperScissorsStrategy rpsStrategy = new RockPaperScissorsStrategy();
             RockPaperScissorsFactory rpsFactory = new RockPaperScissorsFactory();
             Dictionary<string, IWeapon> weaponDictionary = rpsAdapter.GetWeaponDictionary();
-
+            Dictionary<CombatConclusion, string> combatConclusionDictionary = rpsAdapter.GetCombatConclusionMap();
             while (true)
             {
                 //Ask player to select an attack option based off of weapon options                
                 Console.WriteLine($"Please select an option {Environment.NewLine}{rpsAdapter.GetWeaponOptions()}");
-                Dictionary<CombatConclusion, string> combatConclusionDictionary = rpsAdapter.GetCombatConclusionMap();
+
                 IWeapon playerWeapon = rpsFactory.PlayerWeapon(Console.ReadLine());
                 IWeapon computerWeapon = rpsFactory.ComputerWeapon();
+                
                 CombatConclusion combatResult = rpsStrategy.GetCombatResult(playerWeapon, computerWeapon);
 
                 Console.WriteLine($"The player selected {playerWeapon.Name}");
