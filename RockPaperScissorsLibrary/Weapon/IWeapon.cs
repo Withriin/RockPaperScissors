@@ -6,10 +6,10 @@ namespace RockPaperScissorsLibrary.Weapon
 {
     public interface IWeapon
     {
-        public string Name { get; set; }
+        string Name { get; set; }
 
-        public bool IsWinner(IWeapon opponentWeapon);
+        bool IsWinner(IWeapon opponentWeapon);
 
-        public bool IsDraw(IWeapon opponentWeapon);
+        bool IsDraw(IWeapon opponentWeapon);
     }
 }
