@@ -10,11 +10,13 @@ namespace RockPaperScissorsApplication
     {
         public bool MainGameLoop()
         {
+            RockPaperScissorsOptions rpsOptions = new RockPaperScissorsOptions();
+            Dictionary<string, IWeapon> weaponDictionary = rpsOptions.GetWeaponDictionary();
+
             while (true)
             {
                 //Ask player to select an attack option based off of weapon options
-                RockPaperScissorsOptions rpsOptions = new RockPaperScissorsOptions();
-                Dictionary<string, IWeapon> weaponDictionary = rpsOptions.GetWeaponDictionary();
+                
                 Console.WriteLine($"Please select an option {Environment.NewLine}{rpsOptions.GetWeaponOptions()}");
                 string userWeapon = Console.ReadLine();
 
@@ -29,7 +31,7 @@ namespace RockPaperScissorsApplication
 
                 Console.WriteLine($"The player selected {playerWeapon.Name}");
                 Console.WriteLine($"The computer selected {computerWeapon.Name}");
-                Console.WriteLine($"Results: {combatConclusionDictionary[combatResult]}. {Environment.NewLine}");
+                Console.WriteLine($"Results: {combatConclusionDictionary[combatResult]}. {Environment.NewLine} {rpsOptions.GetBattleStatisticsText(combatResult)} {Environment.NewLine}");
 
             }
         }

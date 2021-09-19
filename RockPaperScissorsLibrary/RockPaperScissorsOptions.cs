@@ -53,9 +53,21 @@ namespace RockPaperScissorsLibrary
             }
 
             return weaponOptionString.ToString();
-            
         }
-        // TODO Make Feature win count branch (git)
+
+        Dictionary<CombatConclusion , int> _battleStatistics = new Dictionary<CombatConclusion , int>
+        {
+            {CombatConclusion.Draw , 0},
+            {CombatConclusion.Victory , 0},
+            {CombatConclusion.Defeat , 0 }
+        };
+
+        public string GetBattleStatisticsText(CombatConclusion combatConclusion)
+        {
+            _battleStatistics[combatConclusion] = _battleStatistics[combatConclusion] + 1;
+            return $"{_battleStatistics[CombatConclusion.Draw]} Draws, {_battleStatistics[CombatConclusion.Victory]} Wins, {_battleStatistics[CombatConclusion.Defeat]} Losses.";
+        }
+
         // TODO Make input validation branch (git)
 
     }
