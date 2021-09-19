@@ -20,8 +20,8 @@ namespace RockPaperScissorsApplication
                 //Ask player to select an attack option based off of weapon options                
                 Console.WriteLine($"Please select an option {Environment.NewLine}{rpsAdapter.GetWeaponOptions()}");
 
-                IWeapon playerWeapon = rpsFactory.PlayerWeapon(Console.ReadLine());
-                IWeapon computerWeapon = rpsFactory.ComputerWeapon();
+                IWeapon playerWeapon = rpsFactory.GetPlayerWeapon(Console.ReadLine());
+                IWeapon computerWeapon = rpsFactory.GetComputerWeapon();
                 
                 CombatConclusion combatResult = rpsStrategy.GetCombatResult(playerWeapon, computerWeapon);
 

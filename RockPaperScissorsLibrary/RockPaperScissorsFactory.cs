@@ -10,7 +10,7 @@ namespace RockPaperScissorsLibrary
     {           
             RockPaperScissorsAdapter rpsAdapter = new RockPaperScissorsAdapter();
            
-        public IWeapon ComputerWeapon()
+        public IWeapon GetComputerWeapon()
         {
             Dictionary<string, IWeapon> weaponDictionary = rpsAdapter.GetWeaponDictionary();
             //comuters weapon choice generator
@@ -20,7 +20,7 @@ namespace RockPaperScissorsLibrary
             return computerWeapon;
         }
 
-        public IWeapon PlayerWeapon(string playerWeapon)
+        public IWeapon GetPlayerWeapon(string playerWeapon)
         {   
             Dictionary<string, IWeapon> weaponDictionary = rpsAdapter.GetWeaponDictionary();
             weaponDictionary.TryGetValue(playerWeapon, out IWeapon playerWeaponDebug);
