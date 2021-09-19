@@ -5,8 +5,7 @@ using System.Text;
 
 namespace RockPaperScissorsLibrary
 {
-    // attack options probably going to delete soon in favor of a better design *really dislike this as I'm moving forward: updated, work in progress
-    public class RockPaperScissorsOptions
+    public class RockPaperScissorsAdapter
     {
         public Dictionary<string, IWeapon> GetWeaponDictionary()
         {
@@ -26,22 +25,6 @@ namespace RockPaperScissorsLibrary
                 {CombatConclusion.Victory, "Victory" },
                 {CombatConclusion.Defeat, "Defeat" }
             };
-        }
-
-        public CombatConclusion GetCombatResult(IWeapon userWeapon, IWeapon computerWeapon)
-        {
-            if (userWeapon.IsDraw(computerWeapon))
-            {
-                return CombatConclusion.Draw;
-            }
-            else if (userWeapon.IsWinner(computerWeapon))
-            {
-                return CombatConclusion.Victory;
-            }
-            else
-            {
-                return CombatConclusion.Defeat;
-            }
         }
 
         public string GetWeaponOptions()

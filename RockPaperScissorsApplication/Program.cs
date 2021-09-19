@@ -9,12 +9,9 @@ namespace RockPaperScissorsApplication
     {
         static void Main(string[] args)
         {
-            /*I understand that proper naming conventions should have it listed as RPSStrategy or 
-             * some variation there of, but this gave me too much of a laugh to change. */
-            BigBrain bigBrain = new BigBrain();
-            bigBrain.MainGameLoop();
+            GameLoop gameLoop = new GameLoop();
+            gameLoop.MainGameLoop();
         }
     }
 }
 
-//TODO make strategy, factory and adapter classes from bigbrain and rpsOptions

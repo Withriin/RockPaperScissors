@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RockPaperScissorsFactory.cs" />
     <Compile Include="CombatConclusion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RockPaperScissorsOptions.cs" />
+    <Compile Include="RockPaperScissorsAdapter.cs" />
+    <Compile Include="RockPaperScissorsStrategy.cs" />
     <Compile Include="Weapon\IWeapon.cs" />
     <Compile Include="Weapon\Paper.cs" />
     <Compile Include="Weapon\Rock.cs" />

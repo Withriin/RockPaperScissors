@@ -11,12 +11,12 @@ namespace RPSUnitTestProject
     [TestClass]
     public class RockPaperScissorsOptionsUnitTest
     {
-        private RockPaperScissorsOptions _rpsOptions;
+        private RockPaperScissorsAdapter _rpsOptions;
         
         [TestInitialize]
         public void TestStart()
         {
-            _rpsOptions = new RockPaperScissorsOptions();
+            _rpsOptions = new RockPaperScissorsAdapter();
         }
 
         [TestMethod]
