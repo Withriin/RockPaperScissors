@@ -28,24 +28,18 @@ namespace RockPaperScissorsLibrary
             };
         }
 
-       /* int Wins = 0;
-        int Draws = 0;
-        int Losses = 0;*/
         public CombatConclusion GetCombatResult(IWeapon userWeapon, IWeapon computerWeapon)
         {
             if (userWeapon.IsDraw(computerWeapon))
             {
-                //Draws++;
                 return CombatConclusion.Draw;
             }
             else if (userWeapon.IsWinner(computerWeapon))
             {
-                //Wins++;
                 return CombatConclusion.Victory;
             }
             else
             {
-                //Losses++;
                 return CombatConclusion.Defeat;
             }
         }
@@ -59,7 +53,6 @@ namespace RockPaperScissorsLibrary
             }
 
             return weaponOptionString.ToString();
-
         }
 
         Dictionary<CombatConclusion , int> _battleStatistics = new Dictionary<CombatConclusion , int>
@@ -68,6 +61,7 @@ namespace RockPaperScissorsLibrary
             {CombatConclusion.Victory , 0},
             {CombatConclusion.Defeat , 0 }
         };
+
         public string GetBattleStatisticsText(CombatConclusion combatConclusion)
         {
             _battleStatistics[combatConclusion] = _battleStatistics[combatConclusion] + 1;
