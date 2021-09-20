@@ -9,35 +9,39 @@ using System.Text;
 namespace RPSUnitTestProject
 {
     [TestClass]
-    public class RockPaperScissorsOptionsUnitTest
+    public class RockPaperScissorsUnitTests
     {
-        private RockPaperScissorsAdapter _rpsOptions;
+        private RockPaperScissorsAdapter _rpsAdapter;
+        private RockPaperScissorsFactory _rpsFactory;
+        private RockPaperScissorsStrategy _rpsStrategy;
         
         [TestInitialize]
         public void TestStart()
         {
-            _rpsOptions = new RockPaperScissorsAdapter();
+            _rpsAdapter = new RockPaperScissorsAdapter();
+            _rpsFactory = new RockPaperScissorsFactory();
+            _rpsStrategy = new RockPaperScissorsStrategy();
         }
 
         [TestMethod]
         public void GetWeaponDictionaryTest()
         {
-            Dictionary<string, IWeapon> testWeaponDictionary = _rpsOptions.GetWeaponDictionary();
+            Dictionary<string, IWeapon> testWeaponDictionary = _rpsAdapter.GetWeaponDictionary();
             Assert.AreNotEqual(0, testWeaponDictionary.Count);
         }
 
         [TestMethod]
         public void GetCombatResultsTest()
         {
-            Assert.AreEqual(CombatConclusion.Draw, _rpsOptions.GetCombatResult(new Rock(), new Rock()));
-            Assert.AreEqual(CombatConclusion.Victory, _rpsOptions.GetCombatResult(new Rock(), new Scissors()));
-            Assert.AreEqual(CombatConclusion.Defeat, _rpsOptions.GetCombatResult(new Rock(), new Paper()));
+            Assert.AreEqual(CombatConclusion.Draw, _rpsStrategy.GetCombatResult(new Rock(), new Rock()));
+            Assert.AreEqual(CombatConclusion.Victory, _rpsStrategy.GetCombatResult(new Rock(), new Scissors()));
+            Assert.AreEqual(CombatConclusion.Defeat, _rpsStrategy.GetCombatResult(new Rock(), new Paper()));
         }
 
         [TestMethod]
         public void GetWeaponOptionsTest()
         {
-            Assert.AreNotEqual(String.Empty, _rpsOptions.GetWeaponOptions());
+            Assert.AreNotEqual(String.Empty, _rpsAdapter.GetWeaponOptions());
         }
     }
 }
