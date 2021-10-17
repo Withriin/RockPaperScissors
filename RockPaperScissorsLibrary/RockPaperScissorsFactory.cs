@@ -21,10 +21,18 @@ namespace RockPaperScissorsLibrary
         }
 
         public IWeapon GetPlayerWeapon(string playerWeapon)
-        {   
+        {
             Dictionary<string, IWeapon> weaponDictionary = rpsAdapter.GetWeaponDictionary();
-            weaponDictionary.TryGetValue(playerWeapon, out IWeapon playerWeaponDebug);
-            return playerWeaponDebug;
+            if (weaponDictionary.TryGetValue(playerWeapon, out IWeapon playerWeaponDebug))
+            {
+                return playerWeaponDebug;
+            }
+            else
+            {
+                Console.WriteLine("You have entered an invalid input, please try again.");
+                playerWeapon = Console.ReadLine();
+                return GetPlayerWeapon(playerWeapon);
+            }
         }
     }
 }

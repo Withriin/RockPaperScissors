@@ -50,8 +50,5 @@ namespace RockPaperScissorsLibrary
             _battleStatistics[combatConclusion] = _battleStatistics[combatConclusion] + 1;
             return $"{_battleStatistics[CombatConclusion.Draw]} Draws, {_battleStatistics[CombatConclusion.Victory]} Wins, {_battleStatistics[CombatConclusion.Defeat]} Losses.";
         }
-
-        // TODO Make input validation branch (git)
-
     }
 }
