@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RockPaperScissorsLibrary;
 using RockPaperScissorsLibrary.Weapon;
 using System;
@@ -54,7 +54,7 @@ namespace RPSUnitTestProject
         [TestMethod]
         public void CombatConclusionIncrementTest()
         {
-            
+          
         }
     }
 }
