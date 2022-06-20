@@ -59,7 +59,7 @@ namespace RockPaperScissorsLibrary
         {
             return $"{_battleStatistics[CombatConclusion.Draw]} Draws, {_battleStatistics[CombatConclusion.Victory]} Wins, {_battleStatistics[CombatConclusion.Defeat]} Losses.";
         }
-      
+
         // TODO Make input validation branch (git)
     }
 }
