@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RockPaperScissorsLibrary;
 using RockPaperScissorsLibrary.Weapon;
 using System;
@@ -42,6 +42,19 @@ namespace RPSUnitTestProject
         public void GetWeaponOptionsTest()
         {
             Assert.AreNotEqual(String.Empty, _rpsAdapter.GetWeaponOptions());
+        }
+
+        [TestMethod]
+        public void GetBattleStatisticsMapTest()
+        {
+            Dictionary<CombatConclusion, int> testBattleStatisticsMap = _rpsStrategy.GetBattleStatisticsMap();
+            Assert.AreNotEqual(0, testBattleStatisticsMap.Count);
+        }
+
+        [TestMethod]
+        public void CombatConclusionIncrementTest()
+        {
+          
         }
     }
 }
