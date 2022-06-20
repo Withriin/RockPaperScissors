@@ -8,7 +8,7 @@ using RockPaperScissorsLibrary.Weapon;
 namespace RockPaperScissorsLibrary
 {
     /// <summary>
-    /// Game Rules and statistics
+    /// Handles and defines the game rules and statistics
     /// </summary>
     public class RockPaperScissorsStrategy
     {
@@ -32,8 +32,8 @@ namespace RockPaperScissorsLibrary
        /// <summary>
        /// Takes User and computers weapon selections and checks what the outcome was for the User
        /// </summary>
-       /// <param name="userWeapon"></param>
-       /// <param name="computerWeapon"></param>
+       /// <param name="userWeapon">User IWeapon</param>
+       /// <param name="computerWeapon">Computer generated IWeapon</param>
        /// <returns>CombatConclusion enumerable</returns>
         public CombatConclusion GetCombatResult(IWeapon userWeapon, IWeapon computerWeapon)
         {
@@ -54,10 +54,10 @@ namespace RockPaperScissorsLibrary
         /// <summary>
         /// Adds one to the players combat conclusion that is inputed
         /// </summary>
-        /// <param name="combatConclusion"></param>
-        public void CombatConclusionIncrement(CombatConclusion combatConclusion)
+        /// <param name="combatResult">The result of user and computer comparison</param>
+        public void CombatConclusionIncrement(CombatConclusion combatResult)
         {
-            _battleStatistics[combatConclusion]++;
+            _battleStatistics[combatResult]++;
         }
     }
 }

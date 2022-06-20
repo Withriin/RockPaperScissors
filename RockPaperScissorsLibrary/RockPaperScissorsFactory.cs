@@ -31,7 +31,7 @@ namespace RockPaperScissorsLibrary
         /// <summary>
         /// Validates user input for player weapon and converts it to an IWeapon.
         /// </summary>
-        /// <param name="playerWeapon"></param>
+        /// <param name="playerWeapon">User integer input for weapons keycode</param>
         /// <returns>IWeapon</returns>
         public IWeapon GetPlayerWeapon(string playerWeapon)
         {
