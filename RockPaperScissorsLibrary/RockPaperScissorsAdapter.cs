@@ -1,12 +1,20 @@
-﻿using RockPaperScissorsLibrary.Weapon;
+using RockPaperScissorsLibrary.Weapon;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using RockPaperScissorsLibrary;
+
 
 namespace RockPaperScissorsLibrary
 {
+    /// <summary>
+    /// Transforms data and generates console output.
+    /// </summary>
     public class RockPaperScissorsAdapter
     {
+        /// <summary>
+        /// Returns a dictionary with an integer key that the user inputs to select a weapon.
+        /// </summary>
         public Dictionary<string, IWeapon> GetWeaponDictionary()
         {
             return new Dictionary<string, IWeapon>()
@@ -17,6 +25,9 @@ namespace RockPaperScissorsLibrary
                 };
         }
 
+        /// <summary>
+        /// Returns a dictionary that transforms combatconclusion enumeration to a human readible string.
+        /// </summary>
         public Dictionary<CombatConclusion, string> GetCombatConclusionMap()
         {
             return new Dictionary<CombatConclusion, string>()
@@ -27,6 +38,9 @@ namespace RockPaperScissorsLibrary
             };
         }
 
+         /// <summary>
+         /// Generates weapon names in a human readible string.
+         /// </summary>
         public string GetWeaponOptions()
         {
             StringBuilder weaponOptionString = new StringBuilder();
@@ -38,17 +52,14 @@ namespace RockPaperScissorsLibrary
             return weaponOptionString.ToString();
         }
 
-        Dictionary<CombatConclusion , int> _battleStatistics = new Dictionary<CombatConclusion , int>
+        /// <summary>
+        /// Returns battle statistics to a string to output to user.
+        /// </summary>
+        public string GetBattleStatisticsText(Dictionary<CombatConclusion, int> _battleStatistics)
         {
-            {CombatConclusion.Draw , 0},
-            {CombatConclusion.Victory , 0},
-            {CombatConclusion.Defeat , 0 }
-        };
-
-        public string GetBattleStatisticsText(CombatConclusion combatConclusion)
-        {
-            _battleStatistics[combatConclusion] = _battleStatistics[combatConclusion] + 1;
             return $"{_battleStatistics[CombatConclusion.Draw]} Draws, {_battleStatistics[CombatConclusion.Victory]} Wins, {_battleStatistics[CombatConclusion.Defeat]} Losses.";
         }
+      
+        // TODO Make input validation branch (git)
     }
 }

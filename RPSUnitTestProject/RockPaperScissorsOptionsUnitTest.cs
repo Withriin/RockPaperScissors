@@ -43,5 +43,18 @@ namespace RPSUnitTestProject
         {
             Assert.AreNotEqual(String.Empty, _rpsAdapter.GetWeaponOptions());
         }
+
+        [TestMethod]
+        public void GetBattleStatisticsMapTest()
+        {
+            Dictionary<CombatConclusion, int> testBattleStatisticsMap = _rpsStrategy.GetBattleStatisticsMap();
+            Assert.AreNotEqual(0, testBattleStatisticsMap.Count);
+        }
+
+        [TestMethod]
+        public void CombatConclusionIncrementTest()
+        {
+            
+        }
     }
 }
