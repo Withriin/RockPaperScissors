@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using RockPaperScissorsLibrary;
 
 
 namespace RockPaperScissorsLibrary
@@ -52,26 +53,13 @@ namespace RockPaperScissorsLibrary
         }
 
         /// <summary>
-        /// A dictionary that keeps track of combat conclusions.
+        /// Returns battle statistics to a string to output to user.
         /// </summary>
-        Dictionary<CombatConclusion , int> _battleStatistics = new Dictionary<CombatConclusion , int>
+        public string GetBattleStatisticsText(Dictionary<CombatConclusion, int> _battleStatistics)
         {
-            {CombatConclusion.Draw , 0},
-            {CombatConclusion.Victory , 0},
-            {CombatConclusion.Defeat , 0 }
-        };
-
-        /// <summary>
-        /// Retunrns battle statistics to a string to output to user. To be changed, currently adds most recent combat conclusion to battle statistics.
-        /// </summary>
-        /// <param name="combatConclusion">To be depricated, currently incriments battle statitstics most recent combat conclusion.</param>
-        public string GetBattleStatisticsText(CombatConclusion combatConclusion)
-        {
-            _battleStatistics[combatConclusion] = _battleStatistics[combatConclusion] + 1;
             return $"{_battleStatistics[CombatConclusion.Draw]} Draws, {_battleStatistics[CombatConclusion.Victory]} Wins, {_battleStatistics[CombatConclusion.Defeat]} Losses.";
         }
 
         // TODO Make input validation branch (git)
-        // TODO Move the _battleStatistics increment to strategy
     }
 }
