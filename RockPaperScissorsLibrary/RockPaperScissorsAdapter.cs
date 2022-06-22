@@ -71,7 +71,5 @@ namespace RockPaperScissorsLibrary
             weaponDictionary.TryGetValue(userInput, out IWeapon playerWeapon);
             return playerWeapon;
         }
-
-        // TODO Make input validation branch (git)
     }
 }
