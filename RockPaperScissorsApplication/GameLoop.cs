@@ -25,16 +25,37 @@ namespace RockPaperScissorsApplication
             // Human readability hash map creation
             Dictionary<string, IWeapon> weaponDictionary = rpsAdapter.GetWeaponDictionary();
             Dictionary<CombatConclusion, string> combatConclusionDictionary = rpsAdapter.GetCombatConclusionMap();
-          
+
+            // Bool for validation loop
+            bool isRetry = false;
+
             // The main loop that runs everything
             while (true)
             {
-                 
-                // Ask player to select an attack option based off of weapon options                
-                Console.WriteLine($"Please select an option {Environment.NewLine}{rpsAdapter.GetWeaponOptions()}");
+                // Checks if the validation loop is active, if not runs regular selection dialog. If yes, runs error dialog             
+                if (isRetry)
+                {
+                    Console.WriteLine("You have entered an invalid input, please try again.");
+                    isRetry = false;
+                }
+                else
+                {
+                    Console.WriteLine($"Please select an option {Environment.NewLine}{rpsAdapter.GetWeaponOptions()}");
+                }
+                
+                //User input for weapon selection
+                string playerWeaponString = Console.ReadLine();
 
-                // Ask user for integer input, convert to IWeapon and store in a variable
-                IWeapon playerWeapon = rpsFactory.GetPlayerWeapon(Console.ReadLine());
+                // Checks if user input is valid, if not restarts game loop. Otherwise continues
+                bool isPlayerWeaponValid = rpsFactory.isValidPlayerWeapon(playerWeaponString);
+                if ( !isPlayerWeaponValid)
+                {
+                    isRetry = true;
+                    continue;
+                }
+
+                // converts player input to IWeapon
+                IWeapon playerWeapon = rpsAdapter.ConvertPlayerWeapon(playerWeaponString);
 
                 // Creates computer weapon randomly and stores it in a variable
                 IWeapon computerWeapon = rpsFactory.GetComputerWeapon();
@@ -49,7 +70,7 @@ namespace RockPaperScissorsApplication
                 Console.WriteLine($"The player selected {playerWeapon.Name}");
                 Console.WriteLine($"The computer selected {computerWeapon.Name}");
                 Console.WriteLine($"Results: {combatConclusionDictionary[combatResult]}. {Environment.NewLine} {rpsAdapter.GetBattleStatisticsText(rpsStrategy.GetBattleStatisticsMap())} {Environment.NewLine}");
-
+                //Console.WriteLine($"Would you like to play again? Y/N.");
             }
         } // TODO Add way to end program.
     }

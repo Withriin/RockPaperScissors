@@ -56,5 +56,11 @@ namespace RPSUnitTestProject
         {
           
         }
+
+        [TestMethod]
+        public void isValidPlayerWeapon()
+        {
+            
+        }
     }
 }

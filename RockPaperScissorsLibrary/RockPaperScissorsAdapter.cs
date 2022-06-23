@@ -59,7 +59,17 @@ namespace RockPaperScissorsLibrary
         {
             return $"{_battleStatistics[CombatConclusion.Draw]} Draws, {_battleStatistics[CombatConclusion.Victory]} Wins, {_battleStatistics[CombatConclusion.Defeat]} Losses.";
         }
-      
-        // TODO Make input validation branch (git)
+
+        /// <summary>
+        /// Converts string key to IWeapon from weapon dictionary.
+        /// </summary>
+        /// <param name="userInput">Validated user inputed string</param>
+        /// <returns></returns>
+        public IWeapon ConvertPlayerWeapon(string userInput)
+        {
+            Dictionary<string, IWeapon> weaponDictionary = GetWeaponDictionary();
+            weaponDictionary.TryGetValue(userInput, out IWeapon playerWeapon);
+            return playerWeapon;
+        }
     }
 }

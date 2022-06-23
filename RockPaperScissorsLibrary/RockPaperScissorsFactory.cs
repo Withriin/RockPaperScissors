@@ -29,23 +29,14 @@ namespace RockPaperScissorsLibrary
         }
 
         /// <summary>
-        /// Validates user input for player weapon and converts it to an IWeapon.
+        /// Validates user input for player weapon.
         /// </summary>
         /// <param name="playerWeapon">User integer input for weapons keycode</param>
         /// <returns>IWeapon</returns>
-        public IWeapon GetPlayerWeapon(string playerWeapon)
+        public bool isValidPlayerWeapon(string playerWeapon)
         {
             Dictionary<string, IWeapon> weaponDictionary = rpsAdapter.GetWeaponDictionary();
-            if (weaponDictionary.TryGetValue(playerWeapon, out IWeapon playerWeaponDebug))
-            {
-                return playerWeaponDebug;
-            }
-            else
-            {
-                Console.WriteLine("You have entered an invalid input, please try again.");
-                playerWeapon = Console.ReadLine();
-                return GetPlayerWeapon(playerWeapon);
-            }
+            return (weaponDictionary.TryGetValue(playerWeapon, out IWeapon playerWeaponDebug));
         }
     }
 }
